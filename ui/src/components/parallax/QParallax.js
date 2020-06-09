@@ -146,10 +146,10 @@ export default Vue.extend({
     this.media = this.$scopedSlots.media !== void 0
       ? this.$refs.mediaParent.children[0]
       : this.$refs.media
-    this.__onResize()
-    this.media.style.display = 'initial'
 
     this.media.onload = this.media.onloadstart = this.media.loadedmetadata = this.__onResize
+    this.__onResize()
+    this.media.style.display = 'initial'
 
     if (window.IntersectionObserver !== void 0) {
       this.observer = new IntersectionObserver(entries => {
